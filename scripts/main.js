@@ -49,8 +49,56 @@ let painter = {
 
   // Exercise #3 - Dec 3, 2020
 /*
-  1. 
-  */
+  1. Commented out are class notes 
+
+  ------------------------------------------------------------------
+  const btn = document.querySelector("btn__fun")
+
+  btn.addEventListener("click", () => {
+    console.log("btn clicked")
+  })
+  ------------------------------------------------------------------
+
+  ------------------------------------------------------------------
+  go to css - .alert {background-color:red}  
+  
+ 
+  btn.addEventListener("mouseenter", () => {
+    btn.classList.toggle("alert")
+  })
+  ------------------------------------------------------------------
+
+  ------------------------------------------------------------------
+  btn.addEventListener("click", (theEvent) => {
+    console.log("btn clicked", clickEvent)
+  })
+
+
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+- console.log is to check if working
+- function describes action want it to take when event takes place - so anonymous function 
+  because called on our behalf when event happens
+- event - response to a change in the state
+
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+
+index.html
+add a div under button tag
+<div id="messageBox"></div>
+
+btn.addEventListener("click", (theEvent) => {
+    console.log("btn clicked", clickEvent)
+    const box = document.querySelector("#mesageBox")
+    box.innerHTML = "Hello"
+})
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+*/
 
 const button = document.querySelector(".btn");
 
