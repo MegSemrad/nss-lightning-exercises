@@ -45,3 +45,15 @@ let painter = {
 
   console.log('function', painter.sendInvoice());
   
+
+
+  // Exercise #3 - Dec 3, 2020
+/*
+  1. 
+  */
+
+const button = document.querySelector(".btn");
+
+button.addEventListener("click", () => {
+    console.log("btn was clicked")
+});
