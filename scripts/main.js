@@ -100,11 +100,11 @@ btn.addEventListener("click", (theEvent) => {
 ------------------------------------------------------------------
 */
 
-const button = document.querySelector(".btn");
+// const button = document.querySelector(".btn");
 
-button.addEventListener("click", () => {
-    console.log("btn was clicked")
-});
+// button.addEventListener("click", () => {
+//     console.log("btn was clicked")
+// });
 
 
 
@@ -184,82 +184,145 @@ familyNames(family);
 /*
 If want to look over entire Array and select certain one according to certain criteria
 */
-let family = [
-  {
-    name: "Fred Jones",
-    age: 49,
-    title: "parent"
-  },
-  {
-    name: "Pat Jones",
-    age: 50,
-    title: "parent"
-  },
-  {
-    name: "Bubba Jones",
-    age: 20,
-    title: "adult child"
-  },
-  {
-    name: "Kelly Jones",
-    age: 12,
-    title: "dependent child"
-  },
-  {
-    name: "Bartleby",
-    age: 3,
-    title: "pet"
-  }
-]
-// Takes an argument of a function
-// Beneath condition that must be met for familyMember to be added to new Array called adults
+// let family = [
+//   {
+//     name: "Fred Jones",
+//     age: 49,
+//     title: "parent"
+//   },
+//   {
+//     name: "Pat Jones",
+//     age: 50,
+//     title: "parent"
+//   },
+//   {
+//     name: "Bubba Jones",
+//     age: 20,
+//     title: "adult child"
+//   },
+//   {
+//     name: "Kelly Jones",
+//     age: 12,
+//     title: "dependent child"
+//   },
+//   {
+//     name: "Bartleby",
+//     age: 3,
+//     title: "pet"
+//   }
+// ]
+// // Takes an argument of a function
+// // Beneath condition that must be met for familyMember to be added to new Array called adults
 
-const adults = family.filter( (familyMember) => {
-  if (familyMember.age >= 18) {
-    return true 
-  }
-} ) 
-//  Can use below line as alternative if do not want to use if statement 
-// const adults = family.filter( (familyMember) => familyMember.age >= 18)
-// Could also put .map() on the end of the above line and put it into DOM
-// or could simply put adults.map()
+// const adults = family.filter( (familyMember) => {
+//   if (familyMember.age >= 18) {
+//     return true 
+//   }
+// } ) 
+// //  Can use below line as alternative if do not want to use if statement 
+// // const adults = family.filter( (familyMember) => familyMember.age >= 18)
+// // Could also put .map() on the end of the above line and put it into DOM
+// // or could simply put adults.map()
 
-console.log('grownUp?', adults);
+// console.log('grownUp?', adults);
 
 
-//  ------------------------------------
+// //  ------------------------------------
 
-// .find - only finds single thing and creates an array with it inside 
-// parent below is a newly created array
-// If will find the first thing in the family array that meets that requirement and returns it then stops 
+// // .find - only finds single thing and creates an array with it inside 
+// // parent below is a newly created array
+// // If will find the first thing in the family array that meets that requirement and returns it then stops 
 
-let family = [
-  {
-    name: "Fred Jones",
-    age: 49,
-    title: "parent"
-  },
-  {
-    name: "Pat Jones",
-    age: 50,
-    title: "parent"
-  },
-  {
-    name: "Bubba Jones",
-    age: 20,
-    title: "adult child"
-  },
-  {
-    name: "Kelly Jones",
-    age: 12,
-    title: "dependent child"
-  },
-  {
-    name: "Bartleby",
-    age: 3,
-    title: "pet"
-  }
-]
+// let family = [
+//   {
+//     name: "Fred Jones",
+//     age: 49,
+//     title: "parent"
+//   },
+//   {
+//     name: "Pat Jones",
+//     age: 50,
+//     title: "parent"
+//   },
+//   {
+//     name: "Bubba Jones",
+//     age: 20,
+//     title: "adult child"
+//   },
+//   {
+//     name: "Kelly Jones",
+//     age: 12,
+//     title: "dependent child"
+//   },
+//   {
+//     name: "Bartleby",
+//     age: 3,
+//     title: "pet"
+//   }
+// ]
 
-const parent = family.find( (familyMember) => familyMember.title === "parent")
-console.log("parent", parent);
+// const parent = family.find( (familyMember) => familyMember.title === "parent")
+// console.log("parent", parent);
+
+
+
+
+/*
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+*/
+
+/*Exercise #4*/
+// instructors explanation
+const evilPlot = {
+  name: "Order 66",
+  victims: {name: "The Jedi"},
+  villian: "Palpatine"
+};
+console.log("dot notation", evilPlot.victims);
+console.log("bracket notation", evilPlot["victims"]);
+
+evilPlot.successRate = "99.9%";
+evilPlot["nerdFactor"] = 9;
+
+for (let key in evilPlot) {
+  console.log(`The ${key} is ${evilPlot[key]}`);
+}
+// But you cannot use evilPlot.key to access the values - must use evilPlot[key]
+
+const moniker = "name";
+console.log("nested stuff", evilPlot[moniker]);
+
+
+
+
+// ------------------------------------------------------------------
+
+
+
+let employee = {
+  name: "Jeff Winger",
+  age: 37,
+  department: "legal",
+  hire_date: "09/22/2010"
+};
+
+console.log("dot notation", `Our company's lawyer is ${employee.name}`);
+console.log("bracket notation", `Jeff was hired on ${employee["hire_date"]}`);
+
+employee.vacation_days = 20;
+// console.log(employee);
+employee["vacation_days"] = 20;
+console.log(employee);
+// Both above ways worked
+
+let eom = "employee_of_the_month";
+// employee.eom = false
+// console.log("dot notation", employee) // this syntax worked
+
+// bracket notation - ?
+employee[eom] = false;
+console.log("bracket notation", employee)
+// is add "" around eom above, then eom would be the key in the object
+//  but if use no "" then employee_of_the_month would be the key in object 
