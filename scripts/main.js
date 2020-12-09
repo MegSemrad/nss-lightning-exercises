@@ -289,6 +289,10 @@ evilPlot["nerdFactor"] = 9;
 for (let key in evilPlot) {
   console.log(`The ${key} is ${evilPlot[key]}`);
 }
+/*
+- This for/in loop above allows you to iterate over the object. And the key word represents
+  key in the object
+*/
 // But you cannot use evilPlot.key to access the values - must use evilPlot[key]
 
 const moniker = "name";
